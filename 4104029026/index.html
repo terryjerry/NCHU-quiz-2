@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>小考</title>
+		<script src="jquery-3.2.0.min.js"></script>
+		<style>
+			h1 { font-size: 36px; font-weight: bold;
+				 border-style:dotted;
+				 border-bottom-color: black;
+				 border-left-color: white;
+				 border-right-color: white;
+				 border-top-color: white;
+				 padding-bottom:20px;
+				 }
+			span { font-size: 20px;}
+			ul { font-size: 20px;}
+			.do { font-size: 30px; color:red;}
+		</style>
+	</head>
+	<body>
+		<h1 id="ttt">Web Programming</h1><br>
+		<span>content<span>
+		<ul>
+			<li id="HTML">HTML</li>
+			<li id="CSS">CSS</li>
+			<li>DOM</li>
+			<li>JavaScript</li>
+			<li id="JSP">JSP</li>
+		</ul>
+		
+		<button id="button1">以JS更改元素內容</button>
+		<button id="button2">以JQuery更改CSS</button>
+		<button id="button3">更改標題</button>
+		
+		<script type="text/javascript"> 
+			const btn = document.querySelector('#button1');
+			btn.addEventListener('click', function() {
+				var html = document.getElementById("HTML");
+				html.innerHTML = "HTML5";
+				var css= document.getElementById("CSS");
+				css.innerHTML = "CSS3";
+				var objNode = document.getElementById("JSP");
+				var li = document.createElement("li");
+				var strText = "MySQL";
+				var objTextNode = document.createTextNode(strText);
+				objNode.appendChild(li);
+				li.appendChild(objTextNode);
+			});
+			
+			const btn2 = document.querySelector('#button3');
+			btn2.addEventListener('click', function() {
+				var t1 = document.getElementById("ttt");
+				t1.innerHTML = "Web Desingn_4104029026";
+			});
+		</script>
+		
+		<script>
+			
+			$('#button2').mouseenter(function() {
+				$('ul').addClass("do");
+			});
+			$('#button2').mouseleave(function() {
+				$('ul').removeClass("do");
+			});
+		</script>
+	</body>
+</html>
